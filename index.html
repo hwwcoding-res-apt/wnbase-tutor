@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>William &amp; Summer — Math &amp; TJ Admissions Prep</title>
-<meta name="description" content="Math tutoring (K–9) and TJHSST admissions prep over Zoom, from two current TJHSST freshmen. Weekends only. Free 15-minute intro chat.">
+<meta name="description" content="Math tutoring (K–9) and TJHSST admissions prep from two current TJHSST freshmen. Online over Zoom or in person at Pohick Regional Library. Pay online or in cash. Weekends only. Free 15-minute intro chat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -325,6 +325,78 @@
   .subject-card p:last-child{margin-bottom:0; color:var(--pencil-soft); font-size:14px;}
   @media (max-width:760px){ .subject-grid{grid-template-columns:1fr;} }
 
+  /* ---------- choose your setup (session x payment matrix) ---------- */
+  .setup-matrix{
+    display:grid;
+    grid-template-columns:160px 1fr 1fr;
+    background:#fff;
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .setup-matrix > div{
+    padding:22px 24px;
+    border-top:1px solid var(--line-soft);
+    border-left:1px solid var(--line-soft);
+  }
+  .setup-matrix > div:nth-child(-n+3){ border-top:none; }
+  .setup-matrix > div:nth-child(3n+1){ border-left:none; }
+  .setup-matrix .mx-corner{
+    background:var(--ink);
+    color:#aab2c6;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    display:flex;
+    align-items:center;
+  }
+  .setup-matrix .mx-col{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-size:18px;
+    font-weight:700;
+  }
+  .setup-matrix .mx-col span, .setup-matrix .mx-row span{
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--amber);
+    margin-top:4px;
+  }
+  .setup-matrix .mx-row{
+    font-family:'Fraunces',serif;
+    font-size:18px;
+    font-weight:700;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .setup-matrix .mx-row span{ color:var(--green); }
+  .setup-matrix .mx-cell{ display:flex; flex-direction:column; justify-content:center; }
+  .setup-matrix .mx-cell .mx-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    margin-bottom:6px;
+  }
+  .setup-matrix .mx-cell p{ margin:0; font-size:14.5px; color:var(--pencil); }
+  @media (max-width:760px){
+    .setup-matrix{ grid-template-columns:1fr; }
+    .setup-matrix > div{ border-left:none !important; border-top:1px solid var(--line-soft) !important; }
+    .setup-matrix > div:first-child{ border-top:none !important; }
+  }
+  .setup-note{ margin-top:18px; font-size:14.5px; color:var(--pencil-soft); }
+  .setup-note a{ color:var(--ink); font-weight:600; text-decoration:underline; }
+
   /* ---------- schedule (static table) ---------- */
   .schedule-table{
     width:100%;
@@ -433,6 +505,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#setup">Setup</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#policies">Good to Know</a></li>
       <li><a href="#book">Book</a></li>
@@ -463,7 +536,7 @@
           Weekends only
         </span>
         <h1>Math tutoring &amp; TJ admissions prep, from two students who just got in.</h1>
-        <p class="lead">We're William and Summer, current freshmen at Thomas Jefferson High School for Science and Technology, tutoring students in the Northern Virginia / TJHSST area together on weekends.</p>
+        <p class="lead">We're William and Summer, current freshmen at Thomas Jefferson High School for Science and Technology, tutoring students in the Northern Virginia / TJHSST area together on weekends — online over Zoom, or in person at Pohick Regional Library.</p>
         <div class="hero-ctas">
           <a href="#book" class="btn btn-primary">
             <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
@@ -479,7 +552,8 @@
           <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><path d="M10 5.5v5l3.2 1.9" stroke="#1F7A5C" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Sat 9am–9pm</li>
           <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><path d="M10 5.5v5l3.2 1.9" stroke="#1F7A5C" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Sun 9–11am &amp; 7–9pm</li>
           <li><svg width="20" height="20" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="13" rx="2" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><line x1="3" y1="8" x2="17" y2="8" stroke="#1F7A5C" stroke-width="1.6"/></svg> 1-hour sessions</li>
-          <li><svg width="20" height="20" viewBox="0 0 20 20"><rect x="2.5" y="5" width="11" height="10" rx="2" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><path d="M13.5 8.5l4-2.5v8l-4-2.5" stroke="#1F7A5C" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg> Online via Zoom</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20"><rect x="2.5" y="5" width="11" height="10" rx="2" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><path d="M13.5 8.5l4-2.5v8l-4-2.5" stroke="#1F7A5C" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg> Zoom or Pohick Library</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20"><rect x="3" y="6" width="14" height="10" rx="2" fill="none" stroke="#1F7A5C" stroke-width="1.6"/><path d="M3 9.5h14" stroke="#1F7A5C" stroke-width="1.6"/><circle cx="7" cy="13" r="1" fill="#1F7A5C"/></svg> Pay online or cash</li>
         </ul>
       </div>
     </div>
@@ -551,6 +625,33 @@
     </div>
   </section>
 
+  <!-- ================= CHOOSE YOUR SETUP ================= -->
+  <section id="setup">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Session &amp; Payment</span>
+        <h2>Pick your setup</h2>
+        <p>Same $25/hour rate either way — mix and match how we meet and how you pay.</p>
+      </div>
+
+      <div class="setup-matrix">
+        <div class="mx-corner">Session ↓ / Payment →</div>
+        <div class="mx-col">Online<span>Zelle / Venmo</span></div>
+        <div class="mx-col">Cash<span>at Pohick Library</span></div>
+
+        <div class="mx-row">Online<span>via Zoom</span></div>
+        <div class="mx-cell"><span class="mx-tag">Most common</span><p>Pay by Zelle or Venmo, then Book a time, and join by a Zoom link emailed to you.</p></div>
+        <div class="mx-cell"><span class="mx-tag">Works too</span><p>Pay cash at Pohick Regional Library, then join by Zoom from wherever you are.</p></div>
+
+        <div class="mx-row">In person<span>Pohick Library</span></div>
+        <div class="mx-cell"><span class="mx-tag">Face-to-face</span><p>Pay online via Zelle or Venmo, then meet at a table at Pohick Regional Library in Burke, VA.</p></div>
+        <div class="mx-cell"><span class="mx-tag">Fully in-person</span><p>Pay cash at Pohick Regional, then start immediately. No app needed at all.</p></div>
+      </div>
+
+      <p class="setup-note">In-person sessions meet at <a href="https://maps.google.com/?q=Pohick+Regional+Library+6450+Sydenstricker+Rd+Burke+VA+22015" target="_blank" rel="noopener">Pohick Regional Library, 6450 Sydenstricker Rd, Burke, VA</a> — a public space, so seating isn't reserved. Let us know your preference when you book.</p>
+    </div>
+  </section>
+
   <!-- ================= SCHEDULE (static) ================= -->
   <section id="schedule">
     <div class="wrap">
@@ -590,7 +691,7 @@
         </tbody>
       </table>
 
-      <p class="schedule-note">I'm a full-time TJHSST student, so tutoring is limited to these hours to protect my coursework. Taking a small number of students per semester. Rate may increase in the future.</p>
+      <p class="schedule-note">Tutoring hours are flexible, if you don't see hours on this list, email me and I will likely say yes. Rate may increase in the future with notice.</p>
     </div>
   </section>
 
@@ -605,7 +706,11 @@
       <div class="policy-list">
         <div class="policy-row">
           <h3>Payment</h3>
-          <p>Online only — Zelle or Venmo. No cash.</p>
+          <p>Zelle or Venmo, or cash in person at Pohick Regional Library — your choice, independent of whether the session itself is online or in person.</p>
+        </div>
+        <div class="policy-row">
+          <h3>Location</h3>
+          <p>Sessions run over Zoom or in person at Pohick Regional Library (6450 Sydenstricker Rd, Burke, VA), a public library — seating isn't reserved.</p>
         </div>
         <div class="policy-row">
           <h3>Registration</h3>
@@ -613,7 +718,7 @@
         </div>
         <div class="policy-row">
           <h3>Rescheduling</h3>
-          <p>Rescheduling is fine with advance notice. I may also need to cancel a session on my end for any reason, with as much notice as possible.</p>
+          <p>Rescheduling is fine with advance notice. I may also need to cancel a session on my end for any reason, with as much notice as possible. (money refunded)</p>
         </div>
         <div class="policy-row">
           <h3>Learning with a friend or sibling</h3>
